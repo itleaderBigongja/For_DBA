@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="DBeaver.DriverTabbedViewer">
+	</section>
+	<section name="DBeaver.ActiveWizardDialog.NewConnectionWizard">
+		<item key="DIALOG_X_ORIGIN" value="91"/>
+		<item key="DIALOG_Y_ORIGIN" value="-43"/>
+		<item key="DIALOG_WIDTH" value="898"/>
+		<item key="DIALOG_HEIGHT" value="649"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="DBeaver.StandardErrorDialog">
+		<item key="showDetails" value="false"/>
+		<item key="DIALOG_X_ORIGIN" value="352"/>
+		<item key="DIALOG_Y_ORIGIN" value="185"/>
+		<item key="DIALOG_WIDTH" value="376"/>
+		<item key="DIALOG_HEIGHT" value="228"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>
