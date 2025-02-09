@@ -3,3 +3,4 @@ eclipse.preferences.version=1
 sample.database.canceled=true
 tipOfTheDayInitializer.notFirstRun=true
 ui.auto.update.check.time=1739042652409
+ui.show.tip.of.the.day.on.startup=true

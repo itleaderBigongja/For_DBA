@@ -17,4 +17,24 @@
 		<item key="DIALOG_HEIGHT" value="228"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
 	</section>
+	<section name="DBeaver.ShowTipOfTheDayDialog">
+		<item key="DIALOG_X_ORIGIN" value="341"/>
+		<item key="DIALOG_Y_ORIGIN" value="9"/>
+		<item key="DIALOG_WIDTH" value="398"/>
+		<item key="DIALOG_HEIGHT" value="492"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|13.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="DBeaver.QM.LogViewer">
+	</section>
+	<section name="ResultSetViewer">
+		<section name="presentations">
+			<section name="spreadsheet">
+				<item key="enabledPanelIds" value="value-view"/>
+				<item key="activePanelId" value="value-view"/>
+				<item key="panelRatio" value="0"/>
+				<item key="panelsVisible" value="true"/>
+				<item key="verticalLayout" value="false"/>
+			</section>
+		</section>
+	</section>
 </section>

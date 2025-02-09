@@ -582,3 +582,16 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.invokeFramework(DBeaverLauncher.java:650)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.basicRun(DBeaverLauncher.java:610)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.run(DBeaverLauncher.java:1461)
+!SESSION 2025-02-09 06:13:50.964 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=17.0.6
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=ko_KR
+Framework arguments:  -eclipse.keyring /Users/bigongja/Library/DBeaverData/secure/secure_storage
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2025-02-09 06:13:53.484
+!MESSAGE NLS unused message: actions_navigator__objects in: org.jkiss.dbeaver.ui.editors.sql.internal.SQLEditorMessages
+
+!ENTRY org.eclipse.ui 2 2 2025-02-09 06:13:53.923
+!MESSAGE Invalid preference category path: org.eclipse.debug.ui.ConsolePreferencePage (bundle: org.eclipse.ui.console, page: org.eclipse.ui.internal.console.ansi.preferences.AnsiConsolePreferencePage)
