@@ -651,3 +651,32 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.invokeFramework(DBeaverLauncher.java:650)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.basicRun(DBeaverLauncher.java:610)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.run(DBeaverLauncher.java:1461)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2025-02-10 20:40:39.034
+!MESSAGE No active connection
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2025-02-10 20:40:40.154
+!MESSAGE No active connection
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2025-02-10 20:40:44.432
+!MESSAGE No active connection
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2025-02-10 20:40:50.892
+!MESSAGE No active connection
+
+!ENTRY org.jkiss.dbeaver.model 2 0 2025-02-10 21:17:52.225
+!MESSAGE Error parsing query
+!SUBENTRY 1 org.jkiss.dbeaver.model 2 0 2025-02-10 21:17:52.225
+!MESSAGE BadLocationException
+!STACK 0
+org.eclipse.jface.text.BadLocationException
+	at org.eclipse.jface.text.AbstractDocument.get(AbstractDocument.java:958)
+	at org.eclipse.core.internal.filebuffers.SynchronizableDocument.get(SynchronizableDocument.java:130)
+	at org.jkiss.dbeaver.model.sql.parser.SQLScriptParser.parseQueryImpl(SQLScriptParser.java:135)
+	at org.jkiss.dbeaver.model.sql.parser.SQLScriptParser.extractScriptQueries(SQLScriptParser.java:955)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditorBase.extractScriptQueries(SQLEditorBase.java:964)
+	at org.jkiss.dbeaver.ui.editors.sql.syntax.SQLReconcilingStrategy.extractQueries(SQLReconcilingStrategy.java:284)
+	at org.jkiss.dbeaver.ui.editors.sql.syntax.SQLReconcilingStrategy.reconcile(SQLReconcilingStrategy.java:218)
+	at org.jkiss.dbeaver.ui.editors.sql.syntax.SQLReconcilingStrategy.reconcile(SQLReconcilingStrategy.java:100)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:74)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:207)
