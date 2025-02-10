@@ -82,12 +82,12 @@
  *		ㅇ IOT가 항상 Sequential I/O를 제공하는 것은 아닙니다.
  *		
  *		ㅇ 다음과 같은 경우에는 Random I/O가 발생할 수 있음.
- *		(1). Secondary Index 사용 시, I/O 발생
+ *		(1). Secondary Index(보조 인덱스 = 예: UNIQUE KEY) 사용 시, I/O 발생
  *			IOT에서는 Primary Key 기반으로 데이터가 정렬되지만,
  *			Secondary Index를 사용하면 Random I/O가 발생할 수 있음.
  *
  *		 ㅁ 예제: SELECT salary FROM employees WHERE name = 'Alice';
- *			Secondary Index (name 기준)
+ *			Secondary Index(UNIQUE KEY : name 컬럼 기준)
  *				- (Key: 'Alice') -> emp_id : 3
  *				- (Key: 'Bob')	-> emp_id : 1
  *				- (Key: 'Charlie ) -> emp_id : 2
