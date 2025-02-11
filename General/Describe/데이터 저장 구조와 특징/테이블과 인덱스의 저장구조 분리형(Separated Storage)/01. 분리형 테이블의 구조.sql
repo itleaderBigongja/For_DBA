@@ -75,9 +75,11 @@
 		DEPARTMENT 	VARCHAR2(50)
 	) TABLESPACE USERS;
 
+
 	CREATE INDEX IDX_DEPARTMENT ON EMPLOYEES(DEPARTMENT)
 	TABLESPACE INDEX_SPACE;
-    
+
+        
     [ 저장 구조 ]
     ㅇ 테이블 EMPLOYEES는 USER 테이블스페이스에 저장됨
     ㅇ 인덱스 IDX_DEPARTMENT는 INDEX_SPACE 테이블스페이스에 저장됨(분리형 구조)
