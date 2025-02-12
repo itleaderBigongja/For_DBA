@@ -1,10 +1,3 @@
-SELECT ROWID,
-    	DBMS_ROWID.ROWID_OBJECT(ROWID) AS OBJECT_ID,
---    	DBMS_ROWID.ROWID_FILE_NUMBER(ROWID) AS FILE_NUMBER,
-    	DBMS_ROWID.ROWID_BLOCK_NUMBER(ROWID) AS BLOCK_NUMBER,
-    	DBMS_ROWID.ROWID_ROW_NUMBER(ROWID) AS ROW_NUMBER,
-    	CUSTOMER_ORDERS.*
-FROM CUSTOMER_ORDERS;
 
 -- 1. 데이터베이스 구조 및 객체 정보:
 SELECT * FROM DBA_TABLES;					/* 모든 테이블 정보( 테이블 이름, 테이블스페이스, 파티션 정보 등 ) 				*/
@@ -53,4 +46,5 @@ SELECT * FROM DBA_RSRC_PLAN_DIRECTIVES;		/* 리소스 플랜 지시사항 정보
 -- 6. Data Guard 정보
 SELECT * FROM V$DATABASE;					/* 데이터베이스 정보( DBID, 이름, 역할 )									*/
 SELECT * FROM V$STANDBY_LOG;				/* Standby Redo LOG 파일 정보											*/					*/
-SELECT * FROM V$ARCHIVED_LOG;				/* Archived Log 파일 정보												*/
+
+
