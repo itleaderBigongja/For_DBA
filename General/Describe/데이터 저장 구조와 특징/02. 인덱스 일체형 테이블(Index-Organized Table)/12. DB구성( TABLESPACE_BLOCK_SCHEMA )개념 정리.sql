@@ -35,8 +35,8 @@
  * 		|	-> Partitions( 파티션 테이블 )
  * 		
  * 		-> Segment
- * 		|	-> Extent
- * 		|	-> Block
+ * 		|	-> Extent( 여러개의 Data파일이 형성되어 있음 )
+ * 		|	-> Block ( 실제 데이터 저장공간을 표현 )
  * 
  * 
  * 2. Tablespace 구성과 관리
@@ -91,7 +91,7 @@
  *       SIZE 1G BLOCKSIZE 16K;
  * 
  *  
- *  ㅇ 익스텐트(Extent)
+ *  ㅇ 익스텐트(Extents)
  *   ㅁ 블록을 묶어 할당하는 단위
  *    -> 작은 블록들이 모여 Extent를 형성함.
  * 	  -> 데이터가 증가하면 Extent가 자동으로 추가됨
@@ -103,7 +103,8 @@
  *         FROM DBA_SEGMENTS
  *        WHERE SEGMENT_TYPE = 'TABLE';
  *  
- *   ㅁ 테이블 공간 최적화(Shrink)
+ *   ㅁ 테이블 공간 최적
+ * 화(Shrink)
  * 	  -> ALTER TABLE ORDERS ENABLE ROW MOVEMENT;
  * 	  -> ALTER TABLE ORDERS SHRINK SPACE;
  * 
@@ -155,4 +156,3 @@
  *   4. LOB 데이터를 외부 스토리지로 관리( SECUREFILE, NFS )
  *   5. Regular Monitoring 및 Auto Collection 활용
  */
- 
