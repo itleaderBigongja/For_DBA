@@ -2,7 +2,7 @@
  *  운영 DB설계를 위해 필요한 Tablespace, Block, Schema, Segment, Extent, Object 구조
  * 
  * 1. 데이터베이스의 물리적 & 논리적 구조
- *  ㅇ 물리적 구조(Physical Storage)
+ *  ㅇ 물리적 구조(Physical Storage)	== 컴퓨터(물리적)
  * 	 ㅁ 실제 데이터를 저장하는 구조
  *    - 데이터 파일(Datafiles) 				-> 데이터가 저장됨
  *    - Redo 로그 파일( Redo Log Files )		-> 트랜잭션 로그 기록.
@@ -13,7 +13,7 @@
  * 	  FROM DBA_DATA_FILES;
  * 
  * 
- *  ㅇ 논리적 구조(Logical Storage)
+ *  ㅇ 논리적 구조(Logical Storage)		== 사람(논리적)
  * 	 ㅁ 데이터를 관리하는 논리적인 계층 구조
  *   	- TABLESPACE 	-> 데이터 파일을 그룹화한 논리적 저장 공간
  *   	- Schema		-> 테이블, 인덱스, 뷰 등의 논리적 객체 집합

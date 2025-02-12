@@ -1594,3 +1594,86 @@ java.lang.Error: SWT Resource was not properly disposed
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.invokeFramework(DBeaverLauncher.java:650)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.basicRun(DBeaverLauncher.java:610)
 	at org.jkiss.dbeaver.launcher.DBeaverLauncher.run(DBeaverLauncher.java:1461)
+
+!ENTRY org.jkiss.dbeaver.model 4 0 2025-02-12 11:11:55.345
+!MESSAGE SQL Error [2210] [42000]: ORA-02210: no options specified for ALTER TABLE
+
+https://docs.oracle.com/error-help/db/ora-02210/
+
+Error position: line: 4 pos: 16
+!SUBENTRY 1 org.jkiss.dbeaver.model 4 0 2025-02-12 11:11:55.345
+!MESSAGE SQL Error [2210] [42000]: ORA-02210: no options specified for ALTER TABLE
+
+https://docs.oracle.com/error-help/db/ora-02210/
+!SUBENTRY 2 org.jkiss.dbeaver.model 4 0 2025-02-12 11:11:55.345
+!MESSAGE ORA-02210: no options specified for ALTER TABLE
+
+https://docs.oracle.com/error-help/db/ora-02210/
+!STACK 0
+java.sql.SQLSyntaxErrorException: ORA-02210: no options specified for ALTER TABLE
+
+https://docs.oracle.com/error-help/db/ora-02210/
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:712)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:612)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1364)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:969)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:237)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:516)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:191)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:1400)
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:2009)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1622)
+	at oracle.jdbc.driver.OracleStatement.executeInternal(OracleStatement.java:2687)
+	at oracle.jdbc.driver.OracleStatement.execute(OracleStatement.java:2636)
+	at oracle.jdbc.driver.OracleStatementWrapper.execute(OracleStatementWrapper.java:337)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:344)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:128)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:656)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$2(SQLQueryJob.java:546)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:565)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:1041)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:4299)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:128)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:126)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:5068)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: Error : 2210, Position : 16, SQL = ALTER TABLE MOVE, Original SQL = ALTER TABLE MOVE, Error Message = ORA-02210: no options specified for ALTER TABLE
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:720)
+	... 26 more
+!SUBENTRY 3 org.jkiss.dbeaver.model 4 0 2025-02-12 11:11:55.345
+!MESSAGE Error : 2210, Position : 16, SQL = ALTER TABLE MOVE, Original SQL = ALTER TABLE MOVE, Error Message = ORA-02210: no options specified for ALTER TABLE
+
+!STACK 0
+Error : 2210, Position : 16, SQL = ALTER TABLE MOVE, Original SQL = ALTER TABLE MOVE, Error Message = ORA-02210: no options specified for ALTER TABLE
+
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:720)
+	at oracle.jdbc.driver.T4CTTIoer11.processError(T4CTTIoer11.java:612)
+	at oracle.jdbc.driver.T4C8Oall.processError(T4C8Oall.java:1364)
+	at oracle.jdbc.driver.T4CTTIfun.receive(T4CTTIfun.java:969)
+	at oracle.jdbc.driver.T4CTTIfun.doRPC(T4CTTIfun.java:237)
+	at oracle.jdbc.driver.T4C8Oall.doOALL(T4C8Oall.java:516)
+	at oracle.jdbc.driver.T4CStatement.doOall8(T4CStatement.java:191)
+	at oracle.jdbc.driver.T4CStatement.executeForRows(T4CStatement.java:1400)
+	at oracle.jdbc.driver.OracleStatement.executeSQLStatement(OracleStatement.java:2009)
+	at oracle.jdbc.driver.OracleStatement.doExecuteWithTimeout(OracleStatement.java:1622)
+	at oracle.jdbc.driver.OracleStatement.executeInternal(OracleStatement.java:2687)
+	at oracle.jdbc.driver.OracleStatement.execute(OracleStatement.java:2636)
+	at oracle.jdbc.driver.OracleStatementWrapper.execute(OracleStatementWrapper.java:337)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.execute(JDBCStatementImpl.java:344)
+	at org.jkiss.dbeaver.model.impl.jdbc.exec.JDBCStatementImpl.executeStatement(JDBCStatementImpl.java:128)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeStatement(SQLQueryJob.java:656)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.lambda$2(SQLQueryJob.java:546)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.executeSingleQuery(SQLQueryJob.java:565)
+	at org.jkiss.dbeaver.ui.editors.sql.execute.SQLQueryJob.extractData(SQLQueryJob.java:1041)
+	at org.jkiss.dbeaver.ui.editors.sql.SQLEditor$QueryResultsContainer.readData(SQLEditor.java:4299)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.lambda$0(ResultSetJobDataRead.java:128)
+	at org.jkiss.dbeaver.model.exec.DBExecUtils.tryExecuteRecover(DBExecUtils.java:192)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetJobDataRead.run(ResultSetJobDataRead.java:126)
+	at org.jkiss.dbeaver.ui.controls.resultset.ResultSetViewer$ResultSetDataPumpJob.run(ResultSetViewer.java:5068)
+	at org.jkiss.dbeaver.model.runtime.AbstractJob.run(AbstractJob.java:119)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
