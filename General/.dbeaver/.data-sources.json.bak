@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-194e70515f9-777c4a3012226f2": {
+		"oracle_thin-194e72707f5-40a51af25e156df5": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "localhost",
@@ -9,8 +9,8 @@
 			"configuration": {
 				"host": "localhost",
 				"port": "1521",
-				"database": "XE",
-				"url": "jdbc:oracle:thin:@//localhost:1521/XE",
+				"database": "xe",
+				"url": "jdbc:oracle:thin:@//localhost:1521/xe",
 				"configurationType": "MANUAL",
 				"type": "dev",
 				"closeIdleConnection": true,
