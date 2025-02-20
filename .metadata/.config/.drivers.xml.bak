@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <drivers>
 	<provider id="oracle">
-		<driver id="oracle_thin" categories="sql" name="Oracle" class="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@{host}[:{port}]/{database}" port="1521" defaultDatabase="ORCL" defaultUser="system" description="Oracle JDBC driver" custom="false">
+		<driver id="oracle_thin" categories="sql" name="Oracle" class="oracle.jdbc.OracleDriver" url="jdbc:oracle:thin:@{host}[:{port}]/{database}" port="1521" defaultDatabase="xe" defaultUser="system" description="Oracle JDBC driver" custom="false">
 			<library type="jar" path="maven:/com.oracle.database.jdbc:ojdbc11:RELEASE" custom="false" disabled="true" version="23.2.0.0"/>
 			<library type="jar" path="maven:/com.oracle.database.nls:orai18n:RELEASE" custom="false" disabled="true" version="23.2.0.0"/>
 			<library type="jar" path="maven:/com.oracle.database.xml:xdb6:RELEASE" custom="false" disabled="true" version="18.3.0.0"/>

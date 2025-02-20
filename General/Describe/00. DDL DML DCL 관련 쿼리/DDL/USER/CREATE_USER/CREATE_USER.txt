@@ -1,0 +1,91 @@
+*********************** [ 사용자(계정) 생성 ] ***********************
+CREATE USER 사용자명
+ IDENTIFIED BY "비밀번호 설정"
+ DEFAULT TABLESPACE 테이블스페이스명
+ TEMPORARY TABLESPACE TEMP
+ PROFILE default
+ PASSWORD EXPIRE;
+
+설명: IDENTIFIED BY -> 비밀번호를 설정한다.
+     DEFAULT TABLESPACE 테이블스페이스명 -> 기본 테이블스페이스를 지정한다.
+     TEMPORARY TABLESPACE TEMP -> 정렬 등 임시 연산을 수행할 테이블스페이스 지정
+     PROFILE default -> 사용자 계정 정책(패스워드 만료 기간, 접속 시간 등)을 적용
+     PASSWORD EXPIRE -> 사용자가 첫 로그인 시 반드시 비밀번호 변경
+          
+
+*********************** [ 테이블스페이스 할당 ] ***********************
+ALTER USER 사용자명 DEFAULT TABLESPACE 테이블스페이스명;
+설명: 사용자에게 기본 테이블스페이스를 지정해준다( 데이터 저장 블록 )
+
+ALTER USER 사용자명 QUOTA UNLIMITED ON 테이블스페이스명;
+설명: QUOTA UNLIMITED 테이블스페이스의 저장 공간을 무제한으로 설정
+
+ALTER USER 사용자명 QUOTA 500M ON 테이블스페이스명;
+설명: QUOTA 500M ON 테이블스페이스명 -> 테이블스페이스에서 최대 500MB까지 사용가능
+
+
+*********************** [ 사용자에게 기본 권한 부여 ] ***********************
+3. 최소한의 권한만 부여(권한 최소화 원칙)
+GRANT CREATE SESSION TO 사용자명;
+설명: CREATE SESSION -> 데이터베이스에 접속할 수 있는 최소 권한
+
+GRANT CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE TO 사용자명;
+설명: CREATE TABLE, CREATE VIEW, CREATE SEQUENCE, CREATE PROCEDURE -> 기본적인 오브젝트 생성 권한
+
+GRANT CREATE SYNONYM TO 사용자명;
+설명: CREATE SYNONYM -> 퍼블릭 및 프라이빗 시노님 생성 가능
+
+
+*********************** [ 특정 테이블 및 프로시저 권한 부여(권한 세분화) ] ***********************
+DBA(계정:SYSTEM)가 아닌 사용자가 특정 테이블에만 접근할 수 있도록 세분화된 권한을 부여한다.
+
+GRANT SELECT, INSERT, UPDATE, DELETE ON 테이블생성계정.테이블명 TO 사용자명;
+설명: 사용자에게 테이블의 SELECT, INSERT, UPDATE, DELETE의 권한을 부여한다. 
+
+GRANT EXECUTE ON 프로시저생성계정.프로시저명 TO 사용자명;
+설명: 사용자에게 특정 프로시저 실행권한을 부여한다.
+
+
+*********************** [ DBA 권한 부여(선택사항) ] ***********************
+GRANT DBA TO 사용자명;
+설명: 사용자에게 DBA(Database Administrator)권한을 부여할 수도 있다.
+
+
+
+
+*********************** [ 사용자 삭제 ] *********************** 
+DROP USER 사용자명 [Option : CASCADE];
+설명: CASCADE: 사용자와 해당 사용자가 소유한 모든 객체 테이블, 인덱스 등)를 함께 삭제
+
+
+*********************** [ 룰(Role) 생성 ] ***********************
+권한을 개별적으로 부여하는 것이 아니라, 룰(Role)을 생성하여 관리하는 것이 유지보수에 유리함.
+
+CREATE ROLE 룰명;
+GRANT SELECT, INSERT, UPDATE, DELETE ON 테이블생성계정.테이블명 TO Role명;
+설명: 특정 룰에게 특정 테이블의 SELECT, INSERT, UPDATE, DELETE의 권한을 부여한다.
+
+GRANT EXECUTE ON 프로시저생성한계정.프로시저명 TO Role명;
+설명: 특정 룰에게 특정 프로시저의 실행 권한을 부여한다.
+
+GRANT Role명 TO 사용자명;
+설명: 사용자에게 특정 Role에 부여된 권한을 부여한다.
+
+
+*********************** [ 사용자 계정 보안 강화 ] ***********************
+ALTER PROFILE default LIMIT FAILED_LOGIN_ATTEMPTS 5 PASSWORD_LOCK_TIME 1;
+설명: FAILED_LOGIN_ATTEMPTS 5 -> 로그인 실패 5회 초과 시
+     PASSWORD_LOCK_TIME 1 -> 1일 동안 계정 잠금
+     
+     
+*********************** [ DBA 권한을 부여하는 올바른 방법 ] ***********************
+CREATE ROLE ADMIN_ROLE;
+GRANT DBA TO ADMIN_ROLE;
+GRANT ADMIN_ROLE TO 사용자명;
+설명: 이렇게 하면, 필요 시 ADMIN_ROLE을 회수할 수도 있음
+
+
+*********************** [ 사용자 삭제(DROP USER) ] *********************** 
+DROP USER 사용자명 [OPTION: CASCADE]
+설명: 사용자를 삭제할 때, 해당 사용자가 소유한 모든 오브젝트까지 삭제하려면 CASCADE 옵션을 사용해야 함.
+
