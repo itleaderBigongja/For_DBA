@@ -48,3 +48,28 @@ SELECT * FROM V$DATABASE;					/* 데이터베이스 정보( DBID, 이름, 역할
 SELECT * FROM V$STANDBY_LOG;				/* Standby Redo LOG 파일 정보											*/					*/
 
 
+-- 7. 테이블스페이스 정보 조회
+SELECT * FROM DBA_TABLESPACES;				/* 테이블스페이스의 전체 목록 및 속성										*/
+SELECT * FROM DBA_DATA_FILES;				/* 테이블스페이스에 속한 데이터 파일 정보										*/
+SELECT * FROM DBA_FREE_SPACE;				/* 테이블스페이스 내의 사용되지 않은 공간										*/
+
+
+-- 8. 데이터 파일 정보 조회
+SELECT * FROM DBA_DATA_FILES;				/* 데이터 파일의 물리적 정보												*/
+SELECT * FROM DBA_TEMP_FILES;				/* 임시 테이블스페이스의 데이터 파일 정보										*/
+
+
+-- 9. 세그먼트 정보 조회
+SELECT * FROM DBA_SEGMENTS;					/* 테이블, 인덱스 등 세그먼트 정보											*/
+SELECT * FROM DBA_EXTENTS;					/* 특정 세그먼트가 사용하는 익스텐트 정보										*/
+SELECT * FROM DBA_LOBS;						/* LOB 데이터가 저장된 세그먼트 정보										*/
+
+
+-- 10. 익스텐트 정보 조회
+SELECT * FROM DBA_EXTENTS;					/* 세그먼트가 할당받은 익스텐트 정보											*/
+
+
+-- 11. 블록 정보 조회
+SELECT * FROM DBA_FREE_SPACE;				/* 사용가능한 블록 정보													*/
+SELECT * FROM DBA_EXTENTS;					/* 익스텐트에 포함된 블록 정보												*/
+
