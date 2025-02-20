@@ -1,0 +1,40 @@
+*********************** [ 테이블 생성(CREATE TABLE) ] ***********************
+오라클에서 테이블을 생성할 때, 고려해야 할 요소는 다음과 같다.
+ ㅇ 데이터 저장소( 테이블스페이스 ) 지정
+ ㅇ 저장 방식( PCTFREE, PCTUSED 설정
+ ㅇ 기본 키 및 제약 조건
+ ㅇ 파티셔닝 ( 대용량 테이블의 경우 )
+ ㅇ 인덱스 및 외래 키
+ 
+1.1 기본적인 테이블 생성
+CREATE TABLE TABLE_NAME (
+	CUST_NO			NUMBER(10)		CONSTRAINT CUST_NO_PK PRIMARY KEY,
+	CUST_NM			VARCHAR2(30)	NOT NULL,
+	EAMIL			VARCHAR2(30)	UNIQUE,
+	PHONE_NUMBER	VARCHAR2(20)	UNIQUE,
+	REG_DT			DATE			DEFAULT SYSDATE NOT NULL,
+	POINT			NUMBER(10,2)	CHECK(POINT > 0),
+	DEPARTMENT_ID	NUMBER(10,2)	CONSTRAINT EMP_DEPT_FK REFERENCES DEPARTMENTS(DEPARTMENT_ID)
+)
+TABLESPACE USERS
+PCTFREE 10
+PCTUSED 40
+STORAGE(
+	INITIAL	1M
+	NEXT	1M
+	MAXEXTENTS UNLIMITED
+);
+
+설명:
+ㅇ PRIMARY KEY 						-> CUST_NO_PK로 기본 키 지정
+ㅇ UNIQUE 							-> EMAIL은 중복을 허용 안함( NULL값은 가능 )
+ㅇ CHECK(SALARY > 0)					-> 급여는 0보다 커야 함
+ㅇ DEFAULT SYSDATE					-> REG_DT가 입력되지 않으면 현재 날짜가 자동 입력됨
+ㅇ CONSTRAINT EMP_DEPT_FK			-> DEPARTMENTS 테이블의 DEPARTMENT_ID를 외래키로 사용
+ㅇ TABLESPACE USERS 					-> USERS 테이블스페이스에 저장
+ㅇ PCTFREE 20						-> 블록의 20%는 업데이트를 위해 남겨둠
+ㅇ PCTUSED 80						-> 블록의 사용률이 80% 이하가 되면 새로운 행을 저장
+ㅇ STORAGE의 INITIAL 1M				-> 처음 1MB할당
+ㅇ STORAGE의 NEXT 1M					-> 추가 공간 할당 시 1MB씩 증가
+ㅇ STORAGE의 MAXEXTENTS UNLIMNITED 	-> 확장 제한 없음
+
