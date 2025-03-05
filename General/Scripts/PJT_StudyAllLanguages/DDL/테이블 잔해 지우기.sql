@@ -1,0 +1,3 @@
+-- PURGE 지우기(SELECT * FROM TAB에서 테이블 잔해 지우기)
+PURGE TABLE "BIN$L4X77KzPtiLgYBGsAgA0Uw==$0";
+
